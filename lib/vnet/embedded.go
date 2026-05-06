@@ -303,4 +303,8 @@ func (*embeddedApplicationServiceClient) ExchangeSSHKeys(context.Context, *vnetv
 	}, nil
 }
 
+func (*embeddedApplicationServiceClient) PerformSessionMFACeremony(context.Context, *vnetv1.PerformSessionMFACeremonyRequest, ...grpc.CallOption) (*vnetv1.PerformSessionMFACeremonyResponse, error) {
+	return nil, trace.NotImplemented("MFA ceremonies not supported in embedded VNet")
+}
+
 var _ vnetv1.ClientApplicationServiceClient = (*embeddedApplicationServiceClient)(nil)
